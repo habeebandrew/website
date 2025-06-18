@@ -6,6 +6,7 @@
     <title>Contact - Habeeb Andraws</title>
     <link rel="stylesheet" href="portfolio-style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -61,20 +62,26 @@
                     </div>
                 </div>
                 
-                <form class="contact-form">
+                <form class="contact-form" id="contact-form">
+                    <div id="form-messages" class="form-messages"></div>
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="from_name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="from_email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Sending...
+                        </span>
+                    </button>
                 </form>
             </div>
         </div>
@@ -104,5 +111,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html>
