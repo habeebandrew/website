@@ -1,3 +1,10 @@
+// إعدادات EmailJS - سيتم استيرادها من ملف config.js
+const emailConfig = window.emailConfig || {
+    serviceID: 'YOUR_SERVICE_ID',     // استبدل هذا بـ Service ID الخاص بك
+    templateID: 'YOUR_TEMPLATE_ID',   // استبدل هذا بـ Template ID الخاص بك
+    publicKey: 'YOUR_PUBLIC_KEY'      // استبدل هذا بـ Public Key الخاص بك
+};
+
 // Contact Form Handler
 class ContactForm {
     constructor() {
@@ -5,12 +12,8 @@ class ContactForm {
         this.submitBtn = document.getElementById('submit-btn');
         this.messagesDiv = document.getElementById('form-messages');
         
-        // EmailJS configuration - Update these values
-        this.emailjsConfig = {
-            serviceID: 'YOUR_SERVICE_ID', // Replace with your Service ID
-            templateID: 'YOUR_TEMPLATE_ID', // Replace with your Template ID
-            publicKey: 'YOUR_PUBLIC_KEY' // Replace with your Public Key
-        };
+        // استخدام إعدادات EmailJS
+        this.emailjsConfig = emailConfig;
         
         this.init();
     }
@@ -47,18 +50,27 @@ class ContactForm {
                 to_name: 'Habeeb Andraws' // Recipient name
             };
             
-            // Send email using EmailJS
+            // Send email using EmailJS with better error handling
+            console.log('Sending email with params:', {
+                serviceID: this.emailjsConfig.serviceID,
+                templateID: this.emailjsConfig.templateID,
+                templateParams: templateParams
+            });
+            
             const response = await emailjs.send(
                 this.emailjsConfig.serviceID,
                 this.emailjsConfig.templateID,
-                templateParams
+                templateParams,
+                this.emailjsConfig.publicKey
             );
             
-            if (response.status === 200) {
+            console.log('EmailJS Response:', response);
+            
+            if (response.status === 200 || response.status === '200') {
                 this.showMessage('success', 'Your message has been sent successfully! I will get back to you soon.');
                 this.form.reset();
             } else {
-                throw new Error('Failed to send email');
+                throw new Error(`Failed to send email. Status: ${response.status}`);
             }
             
         } catch (error) {
@@ -261,16 +273,7 @@ class MailtoContactForm {
     }
 }
 
-// Initialize contact form when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // You can choose one of the following methods:
-    
-    // 1. Use EmailJS (requires account setup)
-    // new ContactForm();
-    
-    // 2. Use Formspree (requires account setup)
-    // new FormspreeContactForm();
-    
-    // 3. Use mailto (simple but opens email app)
-    new MailtoContactForm();
+// Initialize the contact form handler when the DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new ContactForm();
 });
