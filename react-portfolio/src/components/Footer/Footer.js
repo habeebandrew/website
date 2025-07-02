@@ -17,12 +17,7 @@ const Footer = () => {
       label: "LinkedIn"
     },
     {
-      href: "#",
-      icon: "fab fa-twitter",
-      label: "Twitter"
-    },
-    {
-      href: "#",
+      href: "https://www.instagram.com/habeeb__andrew",
       icon: "fab fa-instagram",
       label: "Instagram"
     }
