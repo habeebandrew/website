@@ -45,7 +45,7 @@ const Home = () => {
     <section id="home" className="hero" ref={heroRef}>
       <div className="hero-content">
         <h1>Hi, I'm <span className="highlight">Habeeb</span> – Flutter Developer & Software Engineer</h1>
-        <h2>Building High-Performance Applications</h2>
+        <h2 className="typing-animation">Building High-Performance Apps</h2>
         <p>I build high-performance mobile, web, and desktop applications focused on clean design and great user experience.</p>
         <div className="hero-buttons">
           <Link to="/projects" className="btn btn-primary">View Projects</Link>
