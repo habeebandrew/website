@@ -228,6 +228,13 @@
     font-size: 1.2rem;
   }
   
+  /* Ensure typing animation container has proper width */
+  .hero-content h2.typing-animation {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
   .hero-content p {
     font-size: 1rem;
   }
@@ -268,6 +275,44 @@
   animation:
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
+}
+
+/* Fix typing animation for mobile - keep animation but ensure text fits */
+@media (max-width: 768px) {
+  .typing-animation {
+    font-size: 1.1rem; /* Smaller font for mobile */
+    letter-spacing: 0.05em; /* Reduce letter spacing */
+    margin: 0 auto; /* Center the text */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    text-align: center; /* Center align */
+    animation:
+      typing 3.5s steps(30, end), /* Fewer steps for smaller text */
+      blink-caret .75s step-end infinite;
+    /* Keep typing animation and white-space: nowrap */
+  }
+}
+
+/* Additional fix for very small screens */
+@media (max-width: 480px) {
+  .typing-animation {
+    font-size: 0.95rem; /* Even smaller for very small screens */
+    letter-spacing: 0.03em; /* Further reduce letter spacing */
+    padding: 0 10px; /* Add padding to prevent text from touching edges */
+    animation:
+      typing 3.5s steps(25, end), /* Fewer steps for smaller text */
+      blink-caret .75s step-end infinite;
+  }
+}
+
+/* Extra small screens - further optimization */
+@media (max-width: 360px) {
+  .typing-animation {
+    font-size: 0.85rem; /* Smallest font size for very small screens */
+    letter-spacing: 0.02em; /* Minimal letter spacing */
+    animation:
+      typing 3.5s steps(20, end), /* Even fewer steps for very small screens */
+      blink-caret .75s step-end infinite;
+  }
 }
 
 /* The typing effect */
