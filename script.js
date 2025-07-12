@@ -242,6 +242,31 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on load
     
+    // Force visibility of portfolio items and buttons
+    setTimeout(() => {
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const projectBtns = document.querySelectorAll('.project-btn');
+        const portfolioActions = document.querySelectorAll('.portfolio-actions');
+        
+        portfolioItems.forEach(item => {
+            item.style.opacity = '1';
+            item.style.visibility = 'visible';
+            item.style.display = 'block';
+        });
+        
+        projectBtns.forEach(btn => {
+            btn.style.opacity = '1';
+            btn.style.visibility = 'visible';
+            btn.style.display = 'inline-flex';
+        });
+        
+        portfolioActions.forEach(action => {
+            action.style.opacity = '1';
+            action.style.visibility = 'visible';
+            action.style.display = 'flex';
+        });
+    }, 100);
+    
     // Typing effect for hero section
     function typeWriter(element, text, speed = 100) {
         let i = 0;
