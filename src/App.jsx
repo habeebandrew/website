@@ -8,6 +8,10 @@ import Services from './pages/Services/Services';
 import Projects from './pages/Projects/Projects';
 import Testimonials from './pages/Testimonials/Testimonials';
 import Contact from './pages/Contact/Contact';
+import ProjectFolderit from './pages/Projects/ProjectFolderit'; // Create this component
+import ProjectBusBooking from './pages/Projects/ProjectBusBooking'; // Create this component
+import ProjectMosaicGroup from './pages/Projects/ProjectMosaicGroup'; // Create this component
+import ProjectRealEstate from './pages/Projects/ProjectRealEstate'; // Create this component
 import './App.css';
 
 function App() {
@@ -23,6 +27,10 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/project-folderit" element={<ProjectFolderit />} />
+            <Route path="/project-bus-booking" element={<ProjectBusBooking />} />
+            <Route path="/project-mosaic-group" element={<ProjectMosaicGroup />} />
+            <Route path="/project-real-estate" element={<ProjectRealEstate />} />
           </Routes>
         </main>
         <Footer />
