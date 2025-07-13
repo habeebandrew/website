@@ -52,7 +52,11 @@ const Projects = () => {
   const handleProjectClick = (link) => {
     // For now, we'll navigate to the HTML pages
     // You can later convert these to React components
-    window.location.href = link.replace('/project-', 'project-') + '.html';
+    if (project.comingSoon) {
+      alert('This project is coming soon!');
+    } else {
+      window.location.href = link.replace('/project-', 'project-') + '.html';
+    }
   };
 
   return (
@@ -79,11 +83,12 @@ const Projects = () => {
                 </div>
                 <div className="portfolio-actions">
                   <button 
-                    onClick={() => handleProjectClick(project.link)}
+                    onClick={() => handleProjectClick(project)}
                     className="btn btn-primary project-btn"
+                    disabled={project.comingSoon}
                   >
                     <i className="fas fa-eye"></i>
-                    Browse Project
+                    {project.comingSoon ? 'Coming Soon' : 'Browse Project'}
                   </button>
                 </div>
               </div>

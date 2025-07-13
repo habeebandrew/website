@@ -3,8 +3,8 @@ import React from 'react';
 function ProjectFolderit() {
   return (
     <div>
-      <h1>Project Folderit</h1>
-      <p>This is the Project Folderit page.</p>
+      <h1>Folderit – Document Management Web App</h1>
+      <p>Flutter-based application designed to streamline file management and enhance collaboration within groups</p>
     </div>
   );
 }

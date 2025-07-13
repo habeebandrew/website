@@ -3,8 +3,8 @@ import React from 'react';
 function ProjectRealEstate() {
   return (
     <div>
-      <h1>Project Real Estate</h1>
-      <p>This is the Project Real Estate page.</p>
+      <h1>Capital Estate - Real Estate Marketing App</h1>
+      <p>Comprehensive platform offering property listing, buying, renting features, and admin dashboards for property management</p>
     </div>
   );
 }
