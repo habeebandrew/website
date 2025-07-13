@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Projects.css';
 
 const Projects = () => {
@@ -49,13 +50,13 @@ const Projects = () => {
     }
   ];
 
-  const handleProjectClick = (link) => {
-    // For now, we'll navigate to the HTML pages
-    // You can later convert these to React components
+  const navigate = useNavigate();
+
+  const handleProjectClick = (project) => {
     if (project.comingSoon) {
       alert('This project is coming soon!');
     } else {
-      window.location.href = link.replace('/project-', 'project-') + '.html';
+      navigate(project.link);
     }
   };
 
@@ -82,7 +83,7 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="portfolio-actions">
-                  <button 
+                  <button
                     onClick={() => handleProjectClick(project)}
                     className="btn btn-primary project-btn"
                     disabled={project.comingSoon}
