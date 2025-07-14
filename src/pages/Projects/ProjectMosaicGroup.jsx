@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
+import './Gallery.css';
 
 function ProjectMosaicGroup() {
   return (
@@ -34,6 +35,27 @@ function ProjectMosaicGroup() {
           </div>
         </div>
         <div className="project-content">
+          <div className="content-section">
+            <h2>Project Gallery</h2>
+            <div className="project-gallery">
+              <div className="gallery-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem'}}>
+                <div className="gallery-item" style={{aspectRatio: '16/10'}}>
+                  <img src="/mosaic (1).jpg" alt="Mosaic Group Portfolio Main Interface" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>🎨 Portfolio Showcase</h3>
+                    <p>Interactive portfolio displaying comprehensive design services and company expertise</p>
+                  </div>
+                </div>
+                <div className="gallery-item" style={{aspectRatio: '16/10'}}>
+                  <img src="/mosaic (2).jpg" alt="Design Services Overview" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>🏗️ Service Categories</h3>
+                    <p>Complete overview of interior design, landscaping, and graphic design services</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="content-section">
             <h2>Project Overview</h2>
             <p>Welcome to <strong>Mosaic Group's Flutter Portfolio Application</strong>! Founded by <strong>Engineer Elias Fayad</strong> and <strong>Graphic Designer Jan Karraz</strong>, Mosaic Group specializes in offering exceptional interior design, graphic design, landscaping, and painting services. This Flutter application serves as a digital portfolio and showcase, featuring a responsive design that adapts to desktop and mobile interfaces, providing an immersive experience to explore comprehensive design services.</p>
@@ -163,6 +185,39 @@ function ProjectMosaicGroup() {
                   <span className="tech-tag">Modular Architecture</span>
                   <span className="tech-tag">Performance Optimized</span>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="content-section">
+            <h2>Design Portfolio Features</h2>
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-camera"></i>
+                </div>
+                <h3>High-Quality Image Gallery</h3>
+                <p>Professional photography showcase with high-resolution images of completed projects and design work.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-filter"></i>
+                </div>
+                <h3>Category Filtering</h3>
+                <p>Smart filtering system to browse projects by service type, style, or project scale for easy navigation.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-info-circle"></i>
+                </div>
+                <h3>Project Details</h3>
+                <p>Comprehensive project information including client testimonials, project timeline, and design specifications.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-share-square"></i>
+                </div>
+                <h3>Social Sharing</h3>
+                <p>Easy sharing capabilities for projects on social media platforms to expand company reach and visibility.</p>
               </div>
             </div>
           </div>
