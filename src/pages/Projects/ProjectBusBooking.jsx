@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
+import './Gallery.css';
 
 function ProjectBusBooking() {
   return (
@@ -34,6 +35,55 @@ function ProjectBusBooking() {
           </div>
         </div>
         <div className="project-content">
+          <div className="content-section">
+            <h2>Project Gallery</h2>
+            <div className="project-gallery">
+              <div className="gallery-grid">
+                <div className="gallery-item main-image">
+                  <img src="/trasport (1).jpg" alt="Bus Booking Main Dashboard" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>🚌 Main Dashboard</h3>
+                    <p>Comprehensive booking interface with route management and real-time tracking</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/trasport (2).jpg" alt="Trip Booking Interface" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>🎫 Trip Booking</h3>
+                    <p>Easy seat selection and reservation system</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/trasport (5).jpg" alt="Route Management System" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>🗺️ Route Management</h3>
+                    <p>Cross-border route planning and optimization</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/trasport (8).jpg" alt="Driver Application Interface" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>👨‍✈️ Driver App</h3>
+                    <p>Specialized interface for drivers and logistics</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/trasport (6).jpg" alt="Customer Management Portal" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>👥 Customer Portal</h3>
+                    <p>User-friendly booking and management interface</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/trasport (12).jpg" alt="Admin Analytics Dashboard" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>📊 Analytics Dashboard</h3>
+                    <p>Comprehensive reporting and business intelligence</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="content-section">
             <h2>Project Overview</h2>
             <p>This comprehensive logistics solution facilitates cross-border transportation between Syria and Jordan. The system includes separate applications for different user types: Customers, Drivers, Admins, and Employees, each with tailored functionality to streamline the booking and logistics process.</p>
@@ -134,6 +184,39 @@ function ProjectBusBooking() {
             </div>
           </div>
           <div className="content-section">
+            <h2>Cross-Border Logistics Features</h2>
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-passport"></i>
+                </div>
+                <h3>Document Verification</h3>
+                <p>Automated passport and visa verification system for seamless border crossing.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-route"></i>
+                </div>
+                <h3>Route Optimization</h3>
+                <p>AI-powered route planning considering border wait times and traffic conditions.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-clock"></i>
+                </div>
+                <h3>Real-time Tracking</h3>
+                <p>Live GPS tracking with estimated arrival times and delay notifications.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-shield-alt"></i>
+                </div>
+                <h3>Security Protocols</h3>
+                <p>Enhanced security measures for passenger and cargo safety during transit.</p>
+              </div>
+            </div>
+          </div>
+          <div className="content-section">
             <h2>Project Impact</h2>
             <div className="impact-stats">
               <div className="stat-card">
@@ -147,6 +230,10 @@ function ProjectBusBooking() {
               <div className="stat-card">
                 <div className="stat-number">100%</div>
                 <div className="stat-label">Cross-platform</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-number">24/7</div>
+                <div className="stat-label">Support System</div>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
+import './Gallery.css';
 
 function ProjectFolderit() {
   return (
@@ -34,6 +35,55 @@ function ProjectFolderit() {
           </div>
         </div>
         <div className="project-content">
+          <div className="content-section">
+            <h2>Project Gallery</h2>
+            <div className="project-gallery">
+              <div className="gallery-grid">
+                <div className="gallery-item main-image">
+                  <img src="/folderit (3).jpg" alt="Folderit Main Dashboard" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>📁 Main Dashboard</h3>
+                    <p>Comprehensive file management interface with advanced organization tools</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/folderit (4).jpg" alt="File Upload Interface" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>📤 File Upload</h3>
+                    <p>Drag & drop file upload with multi-format support</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/folderit (2).jpg" alt="Group Collaboration Portal" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>👥 Group Collaboration</h3>
+                    <p>Team workspace with role-based permissions</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/folderit (5).jpg" alt="Task Management System" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>✅ Task Management</h3>
+                    <p>Assign and track tasks within project groups</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/folderit (8).jpg" alt="User Authentication" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>🔐 User Authentication</h3>
+                    <p>Secure login and user management system</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/folderit (1).jpg" alt="Admin Control Panel" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>⚙️ Admin Panel</h3>
+                    <p>Comprehensive administrative controls and analytics</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="content-section">
             <h2>Project Overview</h2>
             <p>Folder IT is a Flutter-based application designed to streamline file management and enhance collaboration within groups. It provides a user-friendly interface for organizing, sharing, and managing files, along with features for group creation, member invitation, and task assignment. With support for multiple languages and customizable themes, Folder IT offers a personalized and efficient file management experience.</p>
@@ -223,6 +273,39 @@ function ProjectFolderit() {
                 </div>
                 <h3>Real-time Notifications</h3>
                 <p>Stay updated with real-time notifications for file changes, task assignments, and group activities.</p>
+              </div>
+            </div>
+          </div>
+          <div className="content-section">
+            <h2>Advanced File Management</h2>
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-folder-tree"></i>
+                </div>
+                <h3>Hierarchical Organization</h3>
+                <p>Create nested folder structures with unlimited depth for optimal file organization.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-tags"></i>
+                </div>
+                <h3>Smart Tagging</h3>
+                <p>Tag files with custom labels for easy categorization and quick retrieval.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-history"></i>
+                </div>
+                <h3>Version History</h3>
+                <p>Track all file modifications with complete version history and rollback capabilities.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-compress-alt"></i>
+                </div>
+                <h3>File Compression</h3>
+                <p>Automatic file compression to optimize storage space without compromising quality.</p>
               </div>
             </div>
           </div>
