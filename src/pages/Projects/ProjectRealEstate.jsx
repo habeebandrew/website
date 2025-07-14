@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
+import './Gallery.css';
 
 function ProjectRealEstate() {
   return (
@@ -34,6 +35,55 @@ function ProjectRealEstate() {
           </div>
         </div>
         <div className="project-content">
+          <div className="content-section">
+            <h2>Project Gallery</h2>
+            <div className="project-gallery">
+              <div className="gallery-grid">
+                <div className="gallery-item main-image">
+                  <img src="/capital estate.jpg" alt="Capital Estate Main Interface" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>🏠 Main Dashboard</h3>
+                    <p>Complete property listings overview with advanced filtering and search capabilities</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/capital estate2.jpg" alt="Property Search Interface" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>🔍 Advanced Search</h3>
+                    <p>Smart filtering system for precise property discovery</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/capital estate3.jpg" alt="Property Details View" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>📋 Property Details</h3>
+                    <p>Comprehensive property information and media gallery</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/capital estate4.jpg" alt="Agent Profile Interface" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>👨‍💼 Agent Profiles</h3>
+                    <p>Professional real estate agent listings and ratings</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/capital estate5.jpg" alt="Map Integration View" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>🗺️ Map Integration</h3>
+                    <p>Interactive Google Maps with property locations</p>
+                  </div>
+                </div>
+                <div className="gallery-item">
+                  <img src="/capital estate6.jpg" alt="Admin Dashboard" loading="lazy" />
+                  <div className="image-overlay">
+                    <h3>⚙️ Admin Dashboard</h3>
+                    <p>Comprehensive management and analytics interface</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="content-section">
             <h2>Project Overview</h2>
             <p>Capital Estate is a comprehensive real estate marketing application designed to revolutionize the property market experience. The platform serves buyers, sellers, and real estate agents by providing a seamless, efficient, and user-friendly environment for property transactions. Built with Flutter and integrated with REST APIs, the application offers advanced search capabilities, detailed property information, and robust administrative features.</p>
