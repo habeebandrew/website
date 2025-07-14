@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Projects.css';
 
 function ProjectFolderit() {
@@ -6,10 +7,10 @@ function ProjectFolderit() {
     <section className="project-detail page-section">
       <div className="container">
         <div className="back-navigation">
-          <a href="projects.html" className="btn btn-secondary">
+          <Link to="/projects" className="btn btn-secondary">
             <i className="fas fa-arrow-left"></i>
             Back to Projects
-          </a>
+          </Link>
         </div>
         <div className="project-header">
           <div className="project-icon">
@@ -281,14 +282,14 @@ function ProjectFolderit() {
           </div>
         </div>
         <div className="project-actions">
-          <a href="projects.html" className="btn btn-secondary">
+          <Link to="/projects" className="btn btn-secondary">
             <i className="fas fa-arrow-left"></i>
             Back to Projects
-          </a>
-          <a href="contact.html" className="btn btn-primary">
+          </Link>
+          <Link to="/contact" className="btn btn-primary">
             <i className="fas fa-envelope"></i>
             Discuss This Project
-          </a>
+          </Link>
         </div>
       </div>
     </section>
