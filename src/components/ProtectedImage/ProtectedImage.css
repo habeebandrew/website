@@ -1,0 +1,174 @@
+/* Protected Image Component Styles */
+.protected-image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -khtml-user-select: none;
+}
+
+.protected-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -khtml-user-select: none;
+  pointer-events: none; /* Prevent direct interaction */
+}
+
+.protected-image.loaded {
+  opacity: 1;
+}
+
+/* Invisible overlay to prevent interactions */
+.image-protection-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: transparent;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Watermark */
+.image-watermark {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 15;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.image-watermark span {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Loading placeholder */
+.image-loading-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  z-index: 5;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error placeholder */
+.image-error-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  z-index: 5;
+}
+
+.image-error-placeholder i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+
+/* Disable text selection globally for protected images */
+.protected-image-container * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  -khtml-user-select: none !important;
+}
+
+/* Disable highlighting */
+.protected-image-container::selection {
+  background: transparent;
+}
+
+.protected-image-container::-moz-selection {
+  background: transparent;
+}
+
+/* Additional protection for mobile devices */
+@media (max-width: 768px) {
+  .protected-image-container {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .image-watermark {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+/* Prevent image caching in developer tools */
+.protected-image {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Hide from print */
+@media print {
+  .protected-image-container {
+    display: none !important;
+  }
+}

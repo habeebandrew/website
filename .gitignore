@@ -12,6 +12,21 @@ dist
 dist-ssr
 *.local
 
+# Protected Images - Do not commit to repository
+public/*.jpg
+public/*.jpeg
+public/*.png
+public/*.gif
+public/*.webp
+public/*.svg
+!public/vite.svg
+!public/mypic.png
+
+# Image directories
+public/images/
+public/assets/images/
+src/assets/images/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
