@@ -39,8 +39,8 @@ const About = () => {
           <div className="about-text">
             <h3>Software Engineering Student & Flutter Developer</h3>
             <p>
-              I'm currently pursuing my Bachelor's degree in Software Engineering at Damascus University (2020–2025 expected). 
-              I'm passionate about building production-ready applications and solving real-world problems through innovative technology solutions.
+            I hold a Bachelor’s degree in Software Engineering from the Faculty of Informatics Engineering at Damascus University . 
+            I’m passionate about building production-ready applications and solving real-world problems through innovative technology solutions.
             </p>
             
             <p>
