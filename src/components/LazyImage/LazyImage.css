@@ -1,0 +1,119 @@
+.lazy-image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: var(--skeleton-background, #f0f0f0);
+  border-radius: 8px;
+}
+
+.lazy-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.lazy-image.loading {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+.image-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.skeleton-shimmer {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.image-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--error-background, #f8f9fa);
+  color: var(--text-secondary, #666);
+  min-height: 200px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .lazy-image-container {
+    background: var(--skeleton-background, #3a3a3a);
+  }
+  
+  .image-skeleton {
+    background: linear-gradient(90deg, #3a3a3a 25%, #4a4a4a 50%, #3a3a3a 75%);
+  }
+  
+  .image-error {
+    background: var(--error-background, #2d2d2d);
+    color: var(--text-secondary, #cccccc);
+  }
+}
+
+/* Responsive sizing */
+.lazy-image-container.small {
+  width: 100px;
+  height: 100px;
+}
+
+.lazy-image-container.medium {
+  width: 200px;
+  height: 200px;
+}
+
+.lazy-image-container.large {
+  width: 400px;
+  height: 300px;
+}
+
+.lazy-image-container.full-width {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}

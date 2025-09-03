@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Home.css';
 
 const Home = () => {
@@ -42,7 +43,24 @@ const Home = () => {
   }, []);
 
   return (
-    <section id="home" className="hero" ref={heroRef}>
+    <>
+      <Helmet>
+        <title>Habeeb Andraws - Flutter Developer & Software Engineer</title>
+        <meta name="description" content="Professional Flutter developer and software engineer specializing in mobile, web, and desktop applications. Building high-performance apps with clean design and great user experience." />
+        <meta name="keywords" content="Flutter developer, software engineer, mobile app development, web development, React, UI/UX design" />
+        <meta property="og:title" content="Habeeb Andraws - Flutter Developer & Software Engineer" />
+        <meta property="og:description" content="Professional Flutter developer and software engineer specializing in high-performance applications." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://habeeb-andraws.vercel.app/" />
+        <meta property="og:image" content="/mypic.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Habeeb Andraws - Flutter Developer & Software Engineer" />
+        <meta name="twitter:description" content="Professional Flutter developer and software engineer specializing in high-performance applications." />
+        <meta name="twitter:image" content="/mypic.png" />
+        <link rel="canonical" href="https://habeeb-andraws.vercel.app/" />
+      </Helmet>
+      
+      <section id="home" className="hero" ref={heroRef}>
       <div className="hero-content">
         <h1>Hi, I'm <span className="highlight">Habeeb</span> – Flutter Developer & Software Engineer</h1>
         <h2 className="typing-animation">Building High-Performance Apps</h2>
@@ -60,7 +78,8 @@ const Home = () => {
         </div>
       </div>
     </section>
-  );
+  </>
+);
 };
 
 export default Home;

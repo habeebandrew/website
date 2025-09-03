@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -20,6 +21,7 @@ const Navigation = () => {
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Expertise' },
     { path: '/projects', label: 'Projects' },
+    { path: '/blog', label: 'Blog' },
     { path: '/testimonials', label: 'Testimonials' },
     { path: '/contact', label: 'Contact' }
   ];
@@ -43,6 +45,9 @@ const Navigation = () => {
               {link.label}
             </NavLink>
           ))}
+        </div>
+        <div className="nav-actions">
+          <ThemeToggle />
         </div>
         <div 
           className={`hamburger ${isMenuOpen ? 'active' : ''}`}
