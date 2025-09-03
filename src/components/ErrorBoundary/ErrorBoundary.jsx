@@ -1,5 +1,41 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './ErrorBoundary.css';
+
+// Error display component that uses hooks
+const ErrorDisplay = ({ error, errorInfo, onReload }) => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="error-boundary">
+      <div className="error-content">
+        <div className="error-icon">⚠️</div>
+        <h2>{t('error.title')}</h2>
+        <p>{t('error.description')}</p>
+        
+        <div className="error-actions">
+          <button onClick={onReload} className="btn btn-primary">
+            {t('common.refresh')}
+          </button>
+          <button onClick={() => window.history.back()} className="btn btn-secondary">
+            {t('common.goBack')}
+          </button>
+        </div>
+
+        {import.meta.env.DEV && error && (
+          <details className="error-details">
+            <summary>{t('error.details')}</summary>
+            <pre className="error-stack">
+              {error && error.toString()}
+              <br />
+              {errorInfo.componentStack}
+            </pre>
+          </details>
+        )}
+      </div>
+    </div>
+  );
+};
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -32,33 +68,11 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="error-boundary">
-          <div className="error-content">
-            <div className="error-icon">⚠️</div>
-            <h2>Oops! Something went wrong</h2>
-            <p>We're sorry, but something unexpected happened. Please try refreshing the page.</p>
-            
-            <div className="error-actions">
-              <button onClick={this.handleReload} className="btn btn-primary">
-                Refresh Page
-              </button>
-              <button onClick={() => window.history.back()} className="btn btn-secondary">
-                Go Back
-              </button>
-            </div>
-
-            {import.meta.env.DEV && this.state.error && (
-              <details className="error-details">
-                <summary>Error Details (Development Only)</summary>
-                <pre className="error-stack">
-                  {this.state.error && this.state.error.toString()}
-                  <br />
-                  {this.state.errorInfo.componentStack}
-                </pre>
-              </details>
-            )}
-          </div>
-        </div>
+        <ErrorDisplay 
+          error={this.state.error}
+          errorInfo={this.state.errorInfo}
+          onReload={this.handleReload}
+        />
       );
     }
 

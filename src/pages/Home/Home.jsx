@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import './Home.css';
 
 const Home = () => {
   const heroRef = useRef(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Create particles effect
@@ -62,12 +64,12 @@ const Home = () => {
       
       <section id="home" className="hero" ref={heroRef}>
       <div className="hero-content">
-        <h1>Hi, I'm <span className="highlight">Habeeb</span> – Flutter Developer & Software Engineer</h1>
-        <h2 className="typing-animation">Building High-Performance Apps</h2>
-        <p>I build high-performance mobile, web, and desktop applications focused on clean design and great user experience.</p>
+        <h1>{t('home.greeting')} <span className="highlight">{t('home.name')}</span> – {t('home.title')}</h1>
+        <h2 className="typing-animation">{t('home.subtitle')}</h2>
+        <p>{t('home.description')}</p>
         <div className="hero-buttons">
-          <Link to="/projects" className="btn btn-primary">View Projects</Link>
-          <Link to="/contact" className="btn btn-secondary">Contact Me</Link>
+          <Link to="/projects" className="btn btn-primary">{t('home.viewProjects')}</Link>
+          <Link to="/contact" className="btn btn-secondary">{t('home.contactMe')}</Link>
         </div>
       </div>
       <div className="hero-image">

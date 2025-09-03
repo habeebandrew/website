@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import LanguageToggle from '../LanguageToggle/LanguageToggle';
 import './Navigation.css';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Close mobile menu when route changes
@@ -17,13 +20,13 @@ const Navigation = () => {
   };
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/services', label: 'Expertise' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/blog', label: 'Blog' },
-    { path: '/testimonials', label: 'Testimonials' },
-    { path: '/contact', label: 'Contact' }
+    { path: '/', label: t('nav.home') },
+    { path: '/about', label: t('nav.about') },
+    { path: '/services', label: t('nav.services') },
+    { path: '/projects', label: t('nav.projects') },
+    { path: '/blog', label: t('nav.blog') },
+    { path: '/testimonials', label: t('nav.testimonials') },
+    { path: '/contact', label: t('nav.contact') }
   ];
 
   return (
@@ -47,6 +50,7 @@ const Navigation = () => {
           ))}
         </div>
         <div className="nav-actions">
+          <LanguageToggle />
           <ThemeToggle />
         </div>
         <div 

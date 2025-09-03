@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import LazyImage from '../../components/LazyImage/LazyImage';
 import './Blog.css';
 
@@ -8,6 +9,7 @@ const Blog = () => {
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useTranslation();
 
   // Sample blog posts data
   const blogPosts = [
@@ -91,7 +93,7 @@ const Blog = () => {
     }
   ];
 
-  const categories = ['All', 'Flutter', 'React', 'Web Development', 'JavaScript', 'Design'];
+  const categories = [t('blog.categories.all'), 'Flutter', 'React', t('blog.categories.webDev'), 'JavaScript', t('blog.categories.design')];
 
   useEffect(() => {
     // Simulate loading
@@ -105,12 +107,17 @@ const Blog = () => {
   }, []);
 
   useEffect(() => {
-    if (selectedCategory === 'All') {
+    if (selectedCategory === t('blog.categories.all')) {
       setFilteredPosts(posts);
     } else {
-      setFilteredPosts(posts.filter(post => post.category === selectedCategory));
+      // Map translated categories back to original categories for filtering
+      let filterCategory = selectedCategory;
+      if (selectedCategory === t('blog.categories.webDev')) filterCategory = 'Web Development';
+      if (selectedCategory === t('blog.categories.design')) filterCategory = 'Design';
+      
+      setFilteredPosts(posts.filter(post => post.category === filterCategory));
     }
-  }, [selectedCategory, posts]);
+  }, [selectedCategory, posts, t]);
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -126,7 +133,7 @@ const Blog = () => {
         <div className="container">
           <div className="blog-loading">
             <div className="loading-spinner"></div>
-            <p>Loading articles...</p>
+            <p>{t('blog.loading')}</p>
           </div>
         </div>
       </section>
@@ -144,16 +151,16 @@ const Blog = () => {
       <section className="blog-section">
         <div className="container">
           <div className="blog-header">
-            <h1 className="section-title">Latest Articles</h1>
+            <h1 className="section-title">{t('blog.title')}</h1>
             <p className="section-subtitle">
-              Insights, tutorials, and thoughts on software development, design, and technology
+              {t('blog.subtitle')}
             </p>
           </div>
 
           {/* Featured Posts */}
           {featuredPosts.length > 0 && (
             <div className="featured-posts">
-              <h2 className="featured-title">Featured Articles</h2>
+              <h2 className="featured-title">{t('blog.featured')}</h2>
               <div className="featured-grid">
                 {featuredPosts.map(post => (
                   <article key={post.id} className="featured-post">
@@ -163,7 +170,7 @@ const Blog = () => {
                         alt={post.title}
                         className="full-width"
                       />
-                      <div className="post-badge">Featured</div>
+                      <div className="post-badge">{t('blog.featured')}</div>
                     </div>
                     <div className="post-content">
                       <div className="post-meta">
@@ -178,7 +185,7 @@ const Blog = () => {
                           <span key={tag} className="post-tag">{tag}</span>
                         ))}
                       </div>
-                      <button className="post-read-more">Read More</button>
+                      <button className="post-read-more">{t('blog.readMore')}</button>
                     </div>
                   </article>
                 ))}
@@ -188,7 +195,7 @@ const Blog = () => {
 
           {/* Category Filter */}
           <div className="blog-filters">
-            <h3>Filter by Category</h3>
+            <h3>{t('blog.filterTitle')}</h3>
             <div className="category-buttons">
               {categories.map(category => (
                 <button
@@ -222,7 +229,7 @@ const Blog = () => {
                   <p className="post-excerpt">{post.excerpt}</p>
                   <div className="card-footer">
                     <span className="post-read-time">{post.readTime}</span>
-                    <button className="post-read-more">Read More</button>
+                    <button className="post-read-more">{t('blog.readMore')}</button>
                   </div>
                 </div>
               </article>
@@ -231,8 +238,8 @@ const Blog = () => {
 
           {filteredPosts.length === 0 && (
             <div className="no-posts">
-              <h3>No articles found</h3>
-              <p>Try selecting a different category or check back later for new content.</p>
+              <h3>{t('blog.noArticles')}</h3>
+              <p>{t('blog.noArticlesDesc')}</p>
             </div>
           )}
         </div>

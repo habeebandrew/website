@@ -194,3 +194,65 @@ a {
     padding: 4rem 0 2rem;
   }
 }
+
+/* RTL Support for Arabic */
+.rtl {
+  direction: rtl;
+}
+
+.rtl .nav-container {
+  flex-direction: row-reverse;
+}
+
+.rtl .nav-menu {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.rtl .hero-content {
+  text-align: right;
+}
+
+.rtl .hero-buttons {
+  justify-content: flex-end;
+}
+
+.rtl .section-title,
+.rtl .section-subtitle {
+  text-align: right;
+}
+
+.rtl p {
+  text-align: right;
+}
+
+.rtl .container {
+  padding: 0 20px;
+}
+
+/* RTL Navigation fixes */
+@media (max-width: 768px) {
+  .rtl .nav-menu.active {
+    right: 0;
+    left: auto;
+  }
+}
+
+/* RTL specific font for Arabic */
+.rtl body {
+  font-family: 'Cairo', 'Amiri', 'Noto Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Smooth transition for RTL switch */
+* {
+  transition: margin 0.3s ease, padding 0.3s ease, text-align 0.3s ease;
+}
+
+/* RTL specific adjustments for components */
+.rtl .nav-actions {
+  order: -1;
+}
+
+.rtl .hamburger {
+  order: 1;
+}
