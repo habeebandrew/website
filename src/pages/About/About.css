@@ -130,3 +130,34 @@
     justify-content: center;
   }
 }
+
+/* RTL Support */
+.rtl .about-text {
+  text-align: right;
+}
+
+.rtl .about-text h3 {
+  text-align: right;
+}
+
+.rtl .about-text p {
+  text-align: right;
+}
+
+.rtl .skills {
+  text-align: right;
+}
+
+.rtl .skills h4 {
+  text-align: right;
+}
+
+.rtl .skill-tags {
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .rtl .skill-tags {
+    justify-content: center;
+  }
+}

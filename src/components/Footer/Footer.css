@@ -64,3 +64,31 @@
     order: 1;
   }
 }
+
+/* RTL Support */
+.rtl .footer-content {
+  flex-direction: row-reverse;
+}
+
+.rtl .footer-left {
+  text-align: right;
+}
+
+.rtl .footer-bottom {
+  text-align: center;
+}
+
+.rtl .social-links {
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .rtl .footer-content {
+    flex-direction: column;
+  }
+  
+  .rtl .footer-left {
+    text-align: center;
+    order: 2;
+  }
+}

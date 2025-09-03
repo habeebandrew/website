@@ -30,7 +30,14 @@ const resources = {
       about: {
         title: "About Me",
         subtitle: "Learn more about my journey and expertise",
-        description: "Passionate Flutter developer and software engineer with expertise in mobile, web, and desktop application development."
+        heading: "Software Engineering Student & Flutter Developer",
+        description1: "I hold a Bachelor's degree in Software Engineering from the Faculty of Informatics Engineering at Damascus University. I'm passionate about building production-ready applications and solving real-world problems through innovative technology solutions.",
+        description2: "With experience delivering prototypes and collecting feedback from real clients, I focus on creating applications with exceptional UI/UX design, solid system architecture, and seamless backend integration.",
+        techStack: "Tech Stack",
+        stats: {
+          projects: "Major Projects", 
+          experience: "Years Experience"
+        }
       },
       // Services Page
       services: {
@@ -97,6 +104,7 @@ const resources = {
       },
       // Footer
       footer: {
+        description: "Flutter Developer & Software Engineer creating innovative applications",
         rights: "All rights reserved.",
         builtWith: "Built with",
         social: "Follow me on social media"
@@ -146,7 +154,14 @@ const resources = {
       about: {
         title: "حولي",
         subtitle: "تعرف أكثر على رحلتي وخبراتي",
-        description: "مطور Flutter شغوف ومهندس برمجيات مع خبرة في تطوير تطبيقات الجوال والويب وسطح المكتب."
+        heading: "طالب هندسة برمجيات ومطور Flutter",
+        description1: "أحمل درجة البكالوريوس في هندسة البرمجيات من كلية الهندسة المعلوماتية في جامعة دمشق. أنا شغوف ببناء التطبيقات الجاهزة للإنتاج وحل المشاكل الحقيقية من خلال الحلول التقنية المبتكرة.",
+        description2: "مع خبرة في تطوير النماذج الأولية وجمع التعليقات من العملاء الحقيقيين، أركز على إنشاء تطبيقات بتصميم UI/UX استثنائي، وهندسة نظام قوية، وتكامل backend سلس.",
+        techStack: "التقنيات المستخدمة",
+        stats: {
+          projects: "المشاريع الرئيسية",
+          experience: "سنوات الخبرة"
+        }
       },
       // Services Page
       services: {
@@ -213,6 +228,7 @@ const resources = {
       },
       // Footer
       footer: {
+        description: "مطور Flutter ومهندس برمجيات ينشئ تطبيقات مبتكرة",
         rights: "جميع الحقوق محفوظة.",
         builtWith: "تم البناء باستخدام",
         social: "تابعني على وسائل التواصل الاجتماعي"
