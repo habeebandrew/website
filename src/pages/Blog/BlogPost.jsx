@@ -65,22 +65,22 @@ const BlogPost = () => {
     );
   };
 
-  // Format tags for display
+  // Format tags for display with enhanced styling
   const renderTags = () => {
     if (!post.tags || post.tags.length === 0) return null;
     
     return (
-      <div className="tags flex flex-wrap gap-2 mt-6">
+      <div className="tags flex flex-wrap gap-3 mt-8">
         {post.tags.map((tag, index) => (
           <span key={index} className="tag">
-            {tag}
+            #{tag}
           </span>
         ))}
       </div>
     );
   };
 
-  // Format content with proper paragraphs and lists
+  // Format content with proper paragraphs and enhanced rendering
   const renderContent = () => {
     if (!post.content) return null;
     
@@ -89,9 +89,9 @@ const BlogPost = () => {
       if (paragraph.startsWith('• ')) {
         const listItems = paragraph.split('• ').filter(Boolean);
         return (
-          <ul key={index} className="list-disc pl-6 mb-4">
+          <ul key={index} className="list-disc pl-6 mb-6 space-y-3">
             {listItems.map((item, i) => (
-              <li key={i} className="mb-2">{item.trim()}</li>
+              <li key={i} className="text-gray-700 dark:text-gray-300">{item.trim()}</li>
             ))}
           </ul>
         );
@@ -99,21 +99,38 @@ const BlogPost = () => {
       
       // Check if paragraph is a heading
       if (paragraph.startsWith('## ')) {
-        return <h2 key={index} className="text-2xl font-bold mt-8 mb-4">{paragraph.substring(3)}</h2>;
+        return <h2 key={index} className="text-3xl font-bold mt-10 mb-6 text-gray-900 dark:text-white">{paragraph.substring(3)}</h2>;
+      }
+      
+      if (paragraph.startsWith('### ')) {
+        return <h3 key={index} className="text-2xl font-semibold mt-8 mb-4 text-gray-800 dark:text-gray-200">{paragraph.substring(4)}</h3>;
       }
       
       // Check for code blocks
       if (paragraph.startsWith('```')) {
         const code = paragraph.substring(3, paragraph.length - 3).trim();
         return (
-          <pre key={index} className="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto my-4">
-            <code>{code}</code>
+          <pre key={index} className="bg-gradient-to-br from-gray-800 to-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto my-6 border border-gray-700">
+            <code className="text-sm leading-relaxed">{code}</code>
           </pre>
         );
       }
       
-      // Regular paragraph
-      return <p key={index} className="mb-6 leading-relaxed">{paragraph}</p>;
+      // Check for blockquotes
+      if (paragraph.startsWith('> ')) {
+        return (
+          <blockquote key={index} className="border-l-4 border-blue-500 pl-6 my-6 italic text-lg text-gray-600 dark:text-gray-400">
+            {paragraph.substring(2)}
+          </blockquote>
+        );
+      }
+      
+      // Regular paragraph with enhanced styling
+      return (
+        <p key={index} className="mb-6 leading-relaxed text-gray-800 dark:text-gray-200">
+          {paragraph}
+        </p>
+      );
     });
   };
   
@@ -126,10 +143,10 @@ const BlogPost = () => {
       </Helmet>
 
       <article className={`container mx-auto px-4 py-12 max-w-4xl transition-opacity duration-300 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="mb-10">
+        <div className="mb-12">
           <button 
             onClick={() => navigate(-1)} 
-            className="back-button flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 mb-8 transition-colors"
+            className="back-button flex items-center transition-all duration-300"
             aria-label={t('common.back')}
           >
             <svg 
@@ -144,28 +161,39 @@ const BlogPost = () => {
             {t('common.back')}
           </button>
 
-          <div className="meta flex items-center text-sm text-gray-600 dark:text-gray-400 mb-6">
+          <div className="meta">
             <time dateTime={post.date} className="flex items-center">
               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
               </svg>
               {formatDate(post.date)}
             </time>
-            <span className="divider mx-3">•</span>
+            <span className="divider">•</span>
             <span className="flex items-center">
               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               {post.readTime || t('blog.readTime', { minutes: 5 })}
             </span>
+            {post.author && (
+              <>
+                <span className="divider">•</span>
+                <span className="flex items-center">
+                  <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  {post.author}
+                </span>
+              </>
+            )}
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             {post.title}
           </h1>
           
           {post.excerpt && (
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed font-light">
               {post.excerpt}
             </p>
           )}
@@ -173,15 +201,27 @@ const BlogPost = () => {
           {renderTags()}
         </div>
 
-        <div className="content prose dark:prose-dark max-w-none">
+        {/* Featured image if available */}
+        {post.image && (
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl">
+            <LazyImage
+              src={post.image}
+              alt={post.title}
+              className="w-full h-64 md:h-80 object-cover"
+            />
+          </div>
+        )}
+
+        <div className="content prose prose-lg dark:prose-dark max-w-none">
           {renderContent()}
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex justify-between items-center">
+        {/* Article actions and navigation */}
+        <div className="mt-16 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <button 
               onClick={() => navigate(-1)} 
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors flex items-center"
+              className="back-button flex items-center transition-all duration-300"
             >
               <svg 
                 className={`w-5 h-5 ${i18n.language === 'ar' ? 'ml-2' : 'mr-2'}`} 
@@ -195,10 +235,36 @@ const BlogPost = () => {
               {t('common.backToBlog')}
             </button>
             
-            <div className="flex space-x-2">
+            <div className="flex items-center space-x-4">
+              {/* Share buttons */}
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
+                  {t('blog.share', 'Share:')}
+                </span>
+                <button 
+                  onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({
+                        title: post.title,
+                        text: post.excerpt,
+                        url: window.location.href
+                      });
+                    } else {
+                      navigator.clipboard.writeText(window.location.href);
+                    }
+                  }}
+                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  aria-label={t('blog.shareArticle', 'Share article')}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                  </svg>
+                </button>
+              </div>
+              
               <button 
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 aria-label={t('common.scrollToTop')}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

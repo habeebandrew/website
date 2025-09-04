@@ -186,7 +186,7 @@ const Blog = () => {
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="blog-header">
           <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
             {t('blog.title')}
           </h1>
@@ -196,100 +196,89 @@ const Blog = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8 px-4">
-          <button
-            key="all"
-            onClick={() => handleCategoryChange('all')}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-              activeCategory === 'all' || !activeCategory
-                ? 'bg-blue-600 text-white dark:bg-blue-700'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
-            }`}
-          >
-            {t('blog.categories.all', 'All')}
-          </button>
-          {categories
-            .filter(cat => cat !== 'all')
-            .map((category) => (
-              <button
-                key={category}
-                onClick={() => handleCategoryChange(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeCategory === category
-                    ? 'bg-blue-600 text-white dark:bg-blue-700'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
-                }`}
-              >
-                {t(`blog.categories.${category}`, { defaultValue: category })}
-              </button>
-            ))}
+        <div className="blog-filters">
+          <div className="category-buttons">
+            <button
+              key="all"
+              onClick={() => handleCategoryChange('all')}
+              className={`category-btn ${
+                activeCategory === 'all' || !activeCategory
+                  ? 'active'
+                  : ''
+              }`}
+            >
+              {t('blog.categories.all', 'All')}
+            </button>
+            {categories
+              .filter(cat => cat !== 'all')
+              .map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryChange(category)}
+                  className={`category-btn ${
+                    activeCategory === category
+                      ? 'active'
+                      : ''
+                  }`}
+                >
+                  {t(`blog.categories.${category}`, { defaultValue: category })}
+                </button>
+              ))}
+          </div>
         </div>
 
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+          <div className="featured-posts">
+            <h2 className="featured-title">
               {t('blog.featured')}
             </h2>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="featured-grid">
               {featuredPosts.map((post) => (
-                <div key={post.id} className="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform hover:scale-105">
-                  <div className="flex-shrink-0 h-48 overflow-hidden">
+                <article key={post.id} className="featured-post">
+                  <div className="post-image">
                     <LazyImage
                       src={post.image || '/placeholder-image.jpg'}
                       alt={post.title}
                       className="w-full h-full object-cover"
                     />
-                  </div>
-                  <div className="flex-1 p-6 flex flex-col justify-between">
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                        {t(`blog.categories.${post.category}`, post.category)}
-                      </p>
-                      <Link to={`/blog/${post.id}`} className="block mt-2">
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                          {post.title}
-                        </h3>
-                        <p className="mt-3 text-base text-gray-500 dark:text-gray-400">
-                          {post.excerpt}
-                        </p>
-                      </Link>
-                    </div>
-                    <div className="mt-6 flex items-center justify-between">
-                      <div className="flex items-center">
-                        <div className="flex-shrink-0">
-                          <span className="sr-only">Author</span>
-                          <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                            <span className="text-gray-600 dark:text-gray-300">
-                              {post.author?.[0] || 'A'}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="ml-3">
-                          <p className="text-sm font-medium text-gray-900 dark:text-white">
-                            {post.author || 'Admin'}
-                          </p>
-                          <div className="flex space-x-1 text-sm text-gray-500 dark:text-gray-400">
-                            <time dateTime={post.date}>
-                              {formatDate(post.date)}
-                            </time>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="text-sm text-blue-600 dark:text-blue-400">
-                        {post.readTime || t('blog.readTime', { minutes: 5 })}
-                      </div>
-                    </div>
-                    <div className="mt-4">
-                      <Link
-                        to={`/blog/${post.id}`}
-                        className="text-base font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
-                      >
-                        {t('blog.readMore')} →
-                      </Link>
+                    <div className="post-badge">
+                      {t(`blog.categories.${post.category}`, post.category)}
                     </div>
                   </div>
-                </div>
+                  <div className="post-content">
+                    <div className="post-meta">
+                      <time dateTime={post.date}>
+                        {formatDate(post.date)}
+                      </time>
+                      <span>•</span>
+                      <span>{post.readTime || t('blog.readTime', { minutes: 5 })}</span>
+                    </div>
+                    <Link to={`/blog/${post.id}`}>
+                      <h3 className="post-title">
+                        {post.title}
+                      </h3>
+                    </Link>
+                    <p className="post-excerpt">
+                      {post.excerpt}
+                    </p>
+                    {post.tags && post.tags.length > 0 && (
+                      <div className="post-tags">
+                        {post.tags.slice(0, 3).map((tag, index) => (
+                          <span key={index} className="post-tag">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <Link
+                      to={`/blog/${post.id}`}
+                      className="post-read-more"
+                    >
+                      {t('blog.readMore')} →
+                    </Link>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
@@ -297,80 +286,73 @@ const Blog = () => {
 
         {/* Regular Posts */}
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+          <h2 className="featured-title">
             {activeCategory === 'all' || !activeCategory
               ? t('blog.latestArticles') 
               : t('blog.categoryArticles', { category: t(`blog.categories.${activeCategory}`, { defaultValue: activeCategory }) })}
           </h2>
           
           {regularPosts.length > 0 ? (
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="blog-grid">
               {regularPosts.map((post) => (
-                <div key={post.id} className="flex flex-col rounded-lg shadow overflow-hidden bg-white dark:bg-gray-800 transition-transform hover:scale-105 h-full">
-                  <div className="flex-shrink-0 h-48 overflow-hidden">
+                <article key={post.id} className="blog-card">
+                  <div className="card-image">
                     <LazyImage
                       src={post.image || '/placeholder-image.jpg'}
                       alt={post.title}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1 p-6 flex flex-col">
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                  <div className="card-content">
+                    <div className="post-meta">
+                      <span className="post-category">
                         {t(`blog.categories.${post.category}`, post.category)}
-                      </p>
-                      <Link to={`/blog/${post.id}`} className="block mt-2">
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                          {post.title}
-                        </h3>
-                        <p className="mt-3 text-base text-gray-500 dark:text-gray-400">
-                          {post.excerpt}
-                        </p>
-                      </Link>
+                      </span>
                     </div>
-                    <div className="mt-6 flex items-center justify-between">
-                      <div className="flex items-center">
-                        <div className="flex-shrink-0">
-                          <span className="sr-only">Author</span>
-                          <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                            <span className="text-gray-600 dark:text-gray-300">
-                              {post.author?.[0] || 'A'}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="ml-3">
-                          <p className="text-sm font-medium text-gray-900 dark:text-white">
-                            {post.author || 'Admin'}
-                          </p>
-                          <div className="flex space-x-1 text-sm text-gray-500 dark:text-gray-400">
-                            <time dateTime={post.date}>
-                              {formatDate(post.date)}
-                            </time>
-                          </div>
-                        </div>
+                    <Link to={`/blog/${post.id}`}>
+                      <h3 className="post-title">
+                        {post.title}
+                      </h3>
+                    </Link>
+                    <p className="post-excerpt">
+                      {post.excerpt}
+                    </p>
+                    {post.tags && post.tags.length > 0 && (
+                      <div className="post-tags">
+                        {post.tags.slice(0, 3).map((tag, index) => (
+                          <span key={index} className="post-tag">
+                            {tag}
+                          </span>
+                        ))}
                       </div>
-                      <div className="text-sm text-blue-600 dark:text-blue-400">
-                        {post.readTime || t('blog.readTime', { minutes: 5 })}
+                    )}
+                    <div className="card-footer">
+                      <div className="post-meta">
+                        <time dateTime={post.date}>
+                          {formatDate(post.date)}
+                        </time>
+                        <span>•</span>
+                        <span className="post-read-time">
+                          {post.readTime || t('blog.readTime', { minutes: 5 })}
+                        </span>
                       </div>
-                    </div>
-                    <div className="mt-4">
                       <Link
                         to={`/blog/${post.id}`}
-                        className="text-base font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                        className="post-read-more"
                       >
                         {t('blog.readMore')} →
                       </Link>
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+            <div className="no-posts">
+              <h3>
                 {t('blog.noArticles')}
               </h3>
-              <p className="mt-2 text-gray-500 dark:text-gray-400">
+              <p>
                 {t('blog.noArticlesDesc')}
               </p>
             </div>
