@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Projects.css';
 import './Gallery.css';
 
 function ProjectBusBooking() {
+  const { t } = useTranslation();
+  const [selectedImage, setSelectedImage] = useState(null);
+  
+  const openImageModal = (imageSrc, alt) => {
+    setSelectedImage({ src: imageSrc, alt });
+  };
+  
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
+  
   return (
     <section className="project-detail page-section">
       <div className="container">
@@ -87,6 +99,33 @@ function ProjectBusBooking() {
           <div className="content-section">
             <h2>Project Overview</h2>
             <p>This comprehensive logistics solution facilitates cross-border transportation between Syria and Jordan. The system includes separate applications for different user types: Customers, Drivers, Admins, and Employees, each with tailored functionality to streamline the booking and logistics process.</p>
+          </div>
+          
+          {/* Company Recognition Section */}
+          <div className="content-section recognition-section">
+            <h2>🏆 Company Recognition</h2>
+            <div className="recognition-card">
+              <div className="recognition-content">
+                <div className="recognition-image" onClick={() => openImageModal('/thanksfromalkamal.jpg', 'Al-Kamal International Company Official Appreciation Letter')}>
+                  <img src="/thanksfromalkamal.jpg" alt="Al-Kamal International Company Appreciation Letter" />
+                  <div className="image-overlay">
+                    <i className="fas fa-expand-arrows-alt"></i>
+                    <span>Click to view full letter</span>
+                  </div>
+                </div>
+                <div className="recognition-text">
+                  <h3>{t('testimonials.alkamal.author')}</h3>
+                  <p className="recognition-title">{t('testimonials.alkamal.position')}</p>
+                  <blockquote>
+                    "{t('testimonials.alkamal.content')}"
+                  </blockquote>
+                  <div className="recognition-badge">
+                    <i className="fas fa-award"></i>
+                    <span>Official Client Recognition</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="content-section">
             <h2>Key Features</h2>
@@ -249,6 +288,21 @@ function ProjectBusBooking() {
           </Link>
         </div>
       </div>
+      
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="image-modal" onClick={closeImageModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={closeImageModal}>
+              <i className="fas fa-times"></i>
+            </button>
+            <img src={selectedImage.src} alt={selectedImage.alt} />
+            <div className="modal-caption">
+              <p>{selectedImage.alt}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -638,3 +638,212 @@
     padding: 1.5rem;
   }
 }
+
+/* Company Recognition Section Styles */
+.recognition-section {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 3rem 0;
+  border: 2px solid var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.recognition-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(99, 102, 241, 0.05) 0%, 
+    rgba(139, 92, 246, 0.05) 100%);
+  z-index: 0;
+}
+
+.recognition-section h2 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.recognition-card {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-card);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.recognition-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.recognition-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.recognition-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.recognition-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.recognition-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Recognition Image Overlay */
+.recognition-image .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.recognition-image:hover .image-overlay {
+  opacity: 1;
+}
+
+.recognition-image .image-overlay i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.recognition-image .image-overlay span {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.recognition-text {
+  padding: 2rem;
+}
+
+.recognition-text h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.recognition-title {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.recognition-text blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.recognition-text blockquote::before {
+  content: '"';
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  font-size: 3rem;
+  color: var(--primary-color);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+.recognition-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  width: fit-content;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.recognition-badge i {
+  font-size: 1.1rem;
+}
+
+/* Responsive Recognition Section */
+@media (max-width: 768px) {
+  .recognition-section {
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+  }
+  
+  .recognition-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .recognition-image {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .recognition-text {
+    padding: 1rem;
+  }
+  
+  .recognition-text h3 {
+    font-size: 1.3rem;
+  }
+  
+  .recognition-text blockquote {
+    font-size: 1rem;
+    border-left: none;
+    border-top: 4px solid var(--primary-color);
+    padding-left: 0;
+    padding-top: 1rem;
+    text-align: left;
+  }
+  
+  .recognition-badge {
+    margin: 1.5rem auto 0 auto;
+  }
+}

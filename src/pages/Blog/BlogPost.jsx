@@ -56,11 +56,16 @@ const BlogPost = () => {
     );
   }
 
-  // Format the date based on the current language
+  // Format the date using only Gregorian calendar
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const options = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric',
+      calendar: 'gregory'
+    };
     return new Date(dateString).toLocaleDateString(
-      i18n.language === 'ar' ? 'ar-SA' : 'en-US', 
+      i18n.language === 'ar' ? 'ar-EG' : 'en-US', 
       options
     );
   };

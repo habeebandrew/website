@@ -122,7 +122,7 @@ const Blog = () => {
     );
   }, [allPosts, activeCategory]);
 
-  // Format the date based on the current language
+  // Format the date using only Gregorian calendar
   const formatDate = (dateString) => {
     if (!dateString) return '';
     
@@ -131,12 +131,12 @@ const Blog = () => {
         year: 'numeric', 
         month: 'long', 
         day: 'numeric',
-        calendar: i18n.language === 'ar' ? 'islamic-umalqura' : 'gregory'
+        calendar: 'gregory'
       };
       
       const date = new Date(dateString);
       return date.toLocaleDateString(
-        i18n.language === 'ar' ? 'ar-SA' : 'en-US',
+        i18n.language === 'ar' ? 'ar-EG' : 'en-US',
         options
       );
     } catch (error) {

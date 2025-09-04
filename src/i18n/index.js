@@ -201,7 +201,12 @@ const resources = {
       // Testimonials Page
       testimonials: {
         title: "What Clients Say",
-        subtitle: "Feedback from clients and collaborators"
+        subtitle: "Feedback from clients and collaborators",
+        alkamal: {
+          content: "We are pleased to express our sincere appreciation for Habeeb's exceptional work on our Cross-Border Bus Booking & Logistics System. His technical expertise, professionalism, and dedication throughout the project development exceeded our expectations. The comprehensive solution he delivered has significantly enhanced our operations between Syria and Jordan.",
+          author: "Al-Kamal International Company",
+          position: "Official Appreciation Letter"
+        }
       },
       // Contact Page
       contact: {
@@ -433,7 +438,12 @@ const resources = {
       // Testimonials Page
       testimonials: {
         title: "ما يقوله العملاء",
-        subtitle: "ملاحظات من العملاء والمتعاونين"
+        subtitle: "ملاحظات من العملاء والمتعاونين",
+        alkamal: {
+          content: "يسعدنا أن نعبر عن تقديرنا الصادق للعمل الاستثنائي الذي قام به حبيب في نظام حجز الحافلات واللوجستيات العابر للحدود. خبرته التقنية واحترافيته وتفانيه طوال فترة تطوير المشروع فاقت توقعاتنا. الحل الشامل الذي قدمه قد عزز بشكل كبير عملياتنا بين سوريا والأردن.",
+          author: "شركة الكمال الدولية",
+          position: "رسالة تقدير رسمية"
+        }
       },
       // Contact Page
       contact: {
