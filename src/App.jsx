@@ -15,6 +15,7 @@ const Projects = React.lazy(() => import('./pages/Projects/Projects'));
 const Testimonials = React.lazy(() => import('./pages/Testimonials/Testimonials'));
 const Contact = React.lazy(() => import('./pages/Contact/Contact'));
 const Blog = React.lazy(() => import('./pages/Blog/Blog'));
+const BlogPost = React.lazy(() => import('./pages/Blog/BlogPost'));
 const ProjectFolderit = React.lazy(() => import('./pages/Projects/ProjectFolderit'));
 const ProjectBusBooking = React.lazy(() => import('./pages/Projects/ProjectBusBooking'));
 const ProjectMosaicGroup = React.lazy(() => import('./pages/Projects/ProjectMosaicGroup'));
@@ -76,7 +77,8 @@ function App() {
                   <Route path="/testimonials" element={<Testimonials />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/blog" element={<Blog />} />
-                  <Route path="/project-folderit" element={<ProjectFolderit />} />
+                  <Route path="/blog/:postId" element={<BlogPost />} />
+                  <Route path="/projects/folderit" element={<ProjectFolderit />} />
                   <Route path="/project-bus-booking" element={<ProjectBusBooking />} />
                   <Route path="/project-mosaic-group" element={<ProjectMosaicGroup />} />
                   <Route path="/project-real-estate" element={<ProjectRealEstate />} />
