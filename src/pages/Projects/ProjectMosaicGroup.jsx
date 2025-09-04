@@ -32,6 +32,12 @@ function ProjectMosaicGroup() {
               <i className="fas fa-paint-brush"></i>
               <span>Design Portfolio</span>
             </div>
+            <div className="meta-item">
+              <i className="fas fa-globe"></i>
+              <a href="https://mosaic-company.netlify.app/" target="_blank" rel="noopener noreferrer" className="website-link">
+                View Live Website
+              </a>
+            </div>
           </div>
         </div>
         <div className="project-content">
@@ -380,6 +386,10 @@ function ProjectMosaicGroup() {
             <i className="fas fa-arrow-left"></i>
             Back to Projects
           </Link>
+          <a href="https://mosaic-company.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <i className="fas fa-external-link-alt"></i>
+            View Live Website
+          </a>
           <Link to="/contact" className="btn btn-primary">
             <i className="fas fa-envelope"></i>
             Discuss This Project

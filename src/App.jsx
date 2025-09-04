@@ -78,7 +78,7 @@ function App() {
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:postId" element={<BlogPost />} />
-                  <Route path="/projects/folderit" element={<ProjectFolderit />} />
+                  <Route path="/project-folderit" element={<ProjectFolderit />} />
                   <Route path="/project-bus-booking" element={<ProjectBusBooking />} />
                   <Route path="/project-mosaic-group" element={<ProjectMosaicGroup />} />
                   <Route path="/project-real-estate" element={<ProjectRealEstate />} />

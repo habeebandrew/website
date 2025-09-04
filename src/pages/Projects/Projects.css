@@ -398,6 +398,24 @@
   color: var(--primary-color);
 }
 
+.website-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  border: 1px solid var(--primary-color);
+  background: transparent;
+}
+
+.website-link:hover {
+  background: var(--primary-color);
+  color: var(--text-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
 .project-content {
   max-width: 1000px;
   margin: 0 auto;
