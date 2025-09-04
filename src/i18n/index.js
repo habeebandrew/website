@@ -30,7 +30,7 @@ const resources = {
       about: {
         title: "About Me",
         subtitle: "Learn more about my journey and expertise",
-        heading: "Software Engineering Student & Flutter Developer",
+        heading: "Software Engineering Graduate & Flutter Developer",
         description1: "I hold a Bachelor's degree in Software Engineering from the Faculty of Informatics Engineering at Damascus University. I'm passionate about building production-ready applications and solving real-world problems through innovative technology solutions.",
         description2: "With experience delivering prototypes and collecting feedback from real clients, I focus on creating applications with exceptional UI/UX design, solid system architecture, and seamless backend integration.",
         techStack: "Tech Stack",
@@ -38,6 +38,24 @@ const resources = {
           projects: "Major Projects", 
           experience: "Years Experience"
         }
+      },
+      // Resume
+      resume: {
+        download: "Download Resume"
+      },
+      // Experience
+      experience: {
+        title: "Professional Experience",
+        technologies: "Technologies Used"
+      },
+      // Education
+      education: {
+        title: "Education",
+        achievements: "Key Achievements"
+      },
+      // Soft Skills
+      softSkills: {
+        title: "Personal Skills"
       },
       // Services Page
       services: {
@@ -273,7 +291,7 @@ const resources = {
       about: {
         title: "حولي",
         subtitle: "تعرف أكثر على رحلتي وخبراتي",
-        heading: "طالب هندسة برمجيات ومطور Flutter",
+        heading: "خريج هندسة برمجيات ومطور Flutter",
         description1: "أحمل درجة البكالوريوس في هندسة البرمجيات من كلية الهندسة المعلوماتية في جامعة دمشق. أنا شغوف ببناء التطبيقات الجاهزة للإنتاج وحل المشاكل الحقيقية من خلال الحلول التقنية المبتكرة.",
         description2: "مع خبرة في تطوير النماذج الأولية وجمع التعليقات من العملاء الحقيقيين، أركز على إنشاء تطبيقات بتصميم UI/UX استثنائي، وهندسة نظام قوية، وتكامل backend سلس.",
         techStack: "التقنيات المستخدمة",
@@ -281,6 +299,24 @@ const resources = {
           projects: "المشاريع الرئيسية",
           experience: "سنوات الخبرة"
         }
+      },
+      // Resume
+      resume: {
+        download: "تحميل السيرة الذاتية"
+      },
+      // Experience
+      experience: {
+        title: "الخبرة المهنية",
+        technologies: "التقنيات المستخدمة"
+      },
+      // Education
+      education: {
+        title: "التعليم",
+        achievements: "الإنجازات الرئيسية"
+      },
+      // Soft Skills
+      softSkills: {
+        title: "المهارات الشخصية"
       },
       // Services Page
       services: {

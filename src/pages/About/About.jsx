@@ -1,6 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import ResumeDownload from '../../components/ResumeDownload/ResumeDownload';
+import Experience from '../../components/Experience/Experience';
+import Education from '../../components/Education/Education';
+import SoftSkills from '../../components/SoftSkills/SoftSkills';
 import './About.css';
 
 const About = () => {
@@ -54,6 +58,8 @@ const About = () => {
                 {t('about.description2')}
               </p>
               
+              <ResumeDownload />
+              
               <div className="skills">
                 <h4>{t('about.techStack')}</h4>
                 <div className="skill-tags">
@@ -75,6 +81,10 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <Experience />
+      <Education />
+      <SoftSkills />
     </>
   );
 };
