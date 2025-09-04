@@ -222,6 +222,12 @@ const resources = {
         error: "Failed to send message. Please try again."
       },
       // Footer
+      footer: {
+        description: "Flutter Developer & Software Engineer creating innovative applications",
+        rights: "All rights reserved.",
+        builtWith: "Built with",
+        social: "Follow me on social media"
+      },
       // Common
       common: {
         loading: "Loading...",
