@@ -56,8 +56,8 @@ export const LanguageProvider = ({ children }) => {
   // Initialize language on mount
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language');
-    const browserLanguage = navigator.language.split('-')[0];
-    const initialLanguage = savedLanguage || (rtlLanguages.includes(browserLanguage) ? browserLanguage : 'en');
+    // Default to English if no saved language preference
+    const initialLanguage = savedLanguage || 'en';
     
     if (initialLanguage !== currentLanguage) {
       changeLanguage(initialLanguage);

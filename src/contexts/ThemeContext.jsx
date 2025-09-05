@@ -18,8 +18,8 @@ export const ThemeProvider = ({ children }) => {
       if (savedTheme) {
         return savedTheme === 'dark';
       }
-      // Default to user's system preference
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // Default to dark theme
+      return true;
     } catch (error) {
       console.warn('Error accessing localStorage:', error);
       return true; // Default to dark theme
@@ -65,7 +65,8 @@ export const ThemeProvider = ({ children }) => {
       // Only auto-update if user hasn't manually set a preference
       const savedTheme = localStorage.getItem('theme');
       if (!savedTheme) {
-        setIsDark(e.matches);
+        // Still default to dark even if system preference changes
+        setIsDark(true);
       }
     };
 
