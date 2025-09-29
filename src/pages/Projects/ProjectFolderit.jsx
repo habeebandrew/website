@@ -369,6 +369,15 @@ function ProjectFolderit() {
             <i className="fas fa-arrow-left"></i>
             Back to Projects
           </Link>
+          <a
+            href="https://github.com/habeebandrew/folder_it"
+            className="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fas fa-code-branch"></i>
+            View Code on GitHub
+          </a>
           <Link to="/contact" className="btn btn-primary">
             <i className="fas fa-envelope"></i>
             Discuss This Project

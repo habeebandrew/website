@@ -282,6 +282,15 @@ function ProjectBusBooking() {
             <i className="fas fa-arrow-left"></i>
             Back to Projects
           </Link>
+          <a
+            href="https://apkpure.com/group/com.transport.transporter_customer"
+            className="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fas fa-external-link-alt"></i>
+            APKPure Link
+          </a>
           <Link to="/contact" className="btn btn-primary">
             <i className="fas fa-envelope"></i>
             Discuss This Project
