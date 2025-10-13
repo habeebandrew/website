@@ -21,8 +21,8 @@
 }
 
 .blog-post.dark {
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
-  color: #f3f4f6;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
 }
 
 .blog-post.dark::before {
@@ -86,7 +86,7 @@
 .dark .blog-post .meta {
   background: rgba(255, 255, 255, 0.02);
   border-color: var(--border-color);
-  color: #9ca3af;
+  color: var(--text-secondary);
 }
 
 .blog-post .meta span {
@@ -119,11 +119,11 @@
 
 .blog-post .tag:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
 .dark .blog-post .tag {
-  background: linear-gradient(135dp, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
 }
 
@@ -136,7 +136,7 @@
 }
 
 .dark .blog-post .content {
-  color: #e5e7eb;
+  color: var(--text-primary);
 }
 
 .blog-post .content p {
@@ -174,7 +174,7 @@
 
 .dark .blog-post .content h2,
 .dark .blog-post .content h3 {
-  color: #f9fafb;
+  color: var(--text-primary);
 }
 
 .blog-post .content ul,
@@ -367,8 +367,8 @@
 
 /* Enhanced Code blocks */
 .blog-post pre {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  color: #f9fafb;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+  color: var(--text-primary);
   padding: 2rem;
   border-radius: 15px;
   overflow-x: auto;
@@ -376,7 +376,7 @@
   font-family: 'Fira Code', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 0.9rem;
   line-height: 1.6;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   position: relative;
 }
@@ -393,7 +393,7 @@
 }
 
 .blog-post code {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(37, 99, 235, 0.12);
   color: var(--primary-color);
   padding: 0.2rem 0.5rem;
   border-radius: 6px;
@@ -436,7 +436,7 @@
 .dark .blog-post blockquote {
   background: rgba(255, 255, 255, 0.02);
   border-left-color: var(--primary-color);
-  color: #9ca3af;
+  color: var(--text-secondary);
 }
 
 .rtl .blog-post blockquote {
