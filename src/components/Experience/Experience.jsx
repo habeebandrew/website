@@ -9,6 +9,31 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
+      titleEn: 'Mobile Developer (Flutter)',
+      titleAr: 'مطور جوال (Flutter)',
+      companyEn: 'Nexora Tech',
+      companyAr: 'نيكسورا تك',
+      locationEn: 'Remote/Damascus, Syria',
+      locationAr: 'عن بُعد/دمشق، سوريا',
+      periodEn: 'Oct 2025 - Present',
+      periodAr: 'أكتوبر 2025 - الحالي',
+      descriptionEn: [
+        'Collaborating with a team to transform UI/UX designs from Figma into professional Flutter code',
+        'Applying clean architecture principles, reusable components, and responsive layouts',
+        'Ensuring app scalability, performance optimization, and maintainable state management',
+        'Contributing to code reviews and best-practice implementation across project'
+      ],
+      descriptionAr: [
+        'التعاون مع فريق لتحويل تصاميم UI/UX من Figma إلى كود Flutter احترافي',
+        'تطبيق مبادئ هندسة البرمجيات النظيفة، والمكونات القابلة لإعادة الاستخدام، والتصاميم المستجيبة',
+        'ضمان قابلية توسع التطبيق، وتحسين الأداء، وإدارة الحالة القابلة للصيانة',
+        'المساهمة في مراجعات الكود وتطبيق أفضل الممارسات عبر المشروع'
+      ],
+      technologies: ['Flutter', 'Dart', 'Clean Architecture', 'UI/UX Implementation', 'State Management', 'Code Review'],
+      current: true
+    },
+    {
+      id: 2,
       titleEn: 'Flutter Developer & Product Owner',
       titleAr: 'مطور Flutter ومالك المنتج',
       companyEn: 'Al-Kamal International Transport',
@@ -35,7 +60,7 @@ const Experience = () => {
       current: true
     },
     {
-      id: 2,
+      id: 3,
       titleEn: 'E-Learning Developer',
       titleAr: 'مطور التعلم الإلكتروني',
       companyEn: 'Glotech',

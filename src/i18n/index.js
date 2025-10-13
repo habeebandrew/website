@@ -101,7 +101,8 @@ const resources = {
           firebase: "Firebase",
           architecture: "Architecture",
           projectManagement: "Project Management",
-          softwareEngineering: "Software Engineering"
+          softwareEngineering: "Software Engineering",
+          ai: "AI"
         },
         filterTitle: "Filter by Category",
         latestArticles: "Latest Articles",
@@ -116,7 +117,8 @@ const resources = {
           firebase: "Firebase",
           supabase: "Supabase",
           projectManagement: "Project Management",
-          architecture: "Architecture"
+          architecture: "Architecture",
+          ai: "AI"
         },
         readMore: "Read More",
         readTime: "min read",
@@ -213,7 +215,17 @@ const resources = {
             readTime: "5 min read",
             tags: ["flutter", "firebase", "supabase", "full-stack"],
             featured: true
-          }
+          },
+          promptVsContext: {
+            title: "Prompt Engineering vs. Context Engineering",
+            excerpt: "Where is the difference and why does it matter to us as software engineers?",
+            content: "In the world of generative artificial intelligence, we often hear the term Prompt Engineering, but recently another concept has begun to emerge that is no less important: Context Engineering.\n\nPrompt Engineering:\nThis is the art of crafting instructions (Prompts) in a precise way to obtain the best response from the model. It resembles asking a correct and direct question to a search engine.\n\nContext Engineering:\nThis goes beyond formulating the question and focuses on setting up the context around the model. That is, providing it with information and background that helps it understand and produce a more accurate and specialized answer.\n\nSimple Example:\nImagine you're developing a Flutter app for restaurants:\n\nWith Prompt Engineering, you might write:\n\"Write me a menu screen code in Flutter.\"\n\nBut with Context Engineering, you would provide the model with a pre-existing file or description about:\nThe UI design, application language, and preferred programming style. Then it would generate code that is compatible with your project's needs directly.\n\nResult:\nPrompt Engineering helps you ask the right question.\n\nContext Engineering ensures that the model understands the world around the question.\n\nAs AI applications evolve, combining both becomes the key to reaching intelligent tools that accelerate our work as software engineers.",
+            category: "ai",
+            date: "2025-10-13",
+            readTime: "4 min read",
+            tags: ["Flutter", "AI", "PromptEngineering", "ContextEngineering", "SoftwareEngineering", "MobileDevelopment"],
+            featured: true
+          },
         }
       },
       // Testimonials Page
@@ -362,7 +374,8 @@ const resources = {
           firebase: "فايربيز",
           architecture: "هندسة البرمجيات",
           projectManagement: "إدارة المشاريع",
-          softwareEngineering: "هندسة البرمجيات"
+          softwareEngineering: "هندسة البرمجيات",
+          ai: "ذكاء اصطناعي"
         },
         filterTitle: "تصفية حسب الفئة",
         latestArticles: "أحدث المقالات",
@@ -377,7 +390,8 @@ const resources = {
           firebase: "Firebase",
           supabase: "Supabase",
           projectManagement: "إدارة المشاريع",
-          architecture: "هندسة البرمجيات"
+          architecture: "هندسة البرمجيات",
+          ai: "ذكاء اصطناعي"
         },
         readMore: "اقرأ المزيد",
         readTime: "دقيقة قراءة",
@@ -474,7 +488,17 @@ const resources = {
             readTime: "5 دقائق قراءة",
             tags: ["Flutter", "Firebase", "Supabase", "تطوير كامل المكدس"],
             featured: true
-          }
+          },
+          promptVsContext: {
+            title: "هندسة التعليمات مقابل هندسة السياق",
+            excerpt: "أين يكمن الفرق ولماذا يهمنا كمهندسي برمجيات؟",
+            content: "في عالم الذكاء الاصطناعي التوليدي، كثيرًا ما نسمع مصطلح Prompt Engineering، لكن مؤخرًا بدأ يظهر مفهوم آخر لا يقل أهمية Context Engineering.\n\nPrompt Engineering:\nهو فن صياغة التعليمات (Prompts) بطريقة دقيقة للحصول على استجابة أفضل من النموذج. يشبه الأمر طرح سؤال صحيح ومباشر على محرك بحث.\n\nContext Engineering:\nيتجاوز صياغة السؤال، ويركز على إعداد السياق حول النموذج. أي تزويده بمعلومات وخلفيات تساعد على الفهم وإنتاج إجابة أكثر دقة وتخصصًا.\n\nمثال مبسط:\nتخيل أنك تطور تطبيق Flutter للمطاعم:\n\nباستخدام Prompt Engineering قد تكتب:\n\"اكتب لي كود شاشة قائمة طعام في Flutter.\"\n\nبينما مع Context Engineering، ستوفر للنموذج ملفًا أو وصفًا مسبقًا عن:\nتصميم الواجهة، لغة التطبيق، وأسلوب البرمجة المفضل. عندها سيولّد لك كودًا متوافقًا مع احتياجات مشروعك مباشرة.\n\nالنتيجة:\nPrompt Engineering يساعدك على طرح السؤال الصحيح.\n\nContext Engineering يضمن أن النموذج يفهم العالم من حول السؤال.\n\nومع تطور استخدامات الذكاء الاصطناعي، يصبح الجمع بينهما هو سر الوصول لأدوات ذكية تُسرّع عملنا كمهندسي برمجيات.",
+            category: "ai",
+            date: "2025-10-13",
+            readTime: "4 دقائق قراءة",
+            tags: ["Flutter", "AI", "هندسة التعليمات", "هندسة السياق", "هندسة البرمجيات", "تطوير الجوال"],
+            featured: true
+          },
         }
       },
       // Testimonials Page
