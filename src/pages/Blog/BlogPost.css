@@ -36,7 +36,9 @@
   max-width: 75ch;
   margin: 0 auto;
   padding: 0 2rem;
-  background: var(--card-background);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--border-color);
@@ -463,11 +465,42 @@
   margin: 2.5rem 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--border-color);
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  filter: brightness(1) saturate(1);
 }
 
 .blog-post img:hover {
   transform: scale(1.02);
+  filter: brightness(1.05) saturate(1.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post .mb-12 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.blog-post .mb-12::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.2) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.blog-post .mb-12:hover::before {
+  opacity: 1;
 }
 
 .blog-post figure {
@@ -524,4 +557,34 @@
 
 .dark .blog-post th {
   background: rgba(255, 255, 255, 0.02);
+}
+
+/* Reading Progress Indicator */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--gradient-primary);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
+
+/* Enhanced Image Container */
+.blog-post .rounded-2xl {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.blog-post .rounded-2xl img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(1) saturate(1);
+}
+
+.blog-post .rounded-2xl:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05) saturate(1.1);
 }

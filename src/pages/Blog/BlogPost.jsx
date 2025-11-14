@@ -13,6 +13,7 @@ const BlogPost = () => {
   const navigate = useNavigate();
   const { theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
+  const [readingProgress, setReadingProgress] = useState(0);
   
   // Get the specific blog post
   const allPosts = t('blog.posts', { returnObjects: true, defaultValue: {} });
@@ -37,6 +38,25 @@ const BlogPost = () => {
       setIsMounted(false);
     };
   }, [post, postId, t]);
+
+  // Reading progress indicator
+  useEffect(() => {
+    const updateReadingProgress = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollableHeight = documentHeight - windowHeight;
+      const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+      setReadingProgress(Math.min(100, Math.max(0, progress)));
+    };
+
+    window.addEventListener('scroll', updateReadingProgress);
+    updateReadingProgress(); // Initial calculation
+
+    return () => {
+      window.removeEventListener('scroll', updateReadingProgress);
+    };
+  }, []);
 
   // If post doesn't exist, redirect to blog home
   useEffect(() => {
@@ -146,6 +166,12 @@ const BlogPost = () => {
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags ? post.tags.join(', ') : ''} />
       </Helmet>
+
+      {/* Reading Progress Indicator */}
+      <div 
+        className="reading-progress" 
+        style={{ width: `${readingProgress}%` }}
+      />
 
       <article className={`container mx-auto px-4 py-12 max-w-4xl transition-opacity duration-300 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
         <div className="mb-12">

@@ -134,7 +134,8 @@ const resources = {
             date: "2024-02-15",
             readTime: "3 min read",
             tags: ["software engineering", "app development", "digital transformation"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop&q=80"
           },
           digitalExperience: {
             title: "Digital Experience Beyond Code",
@@ -144,7 +145,8 @@ const resources = {
             date: "2024-02-10",
             readTime: "4 min read",
             tags: ["user experience", "app development", "software architecture"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop&q=80"
           },
           cleanArchitectureVsMVVM: {
             title: "Clean Architecture vs MVVM: Choosing the Right Approach",
@@ -154,7 +156,8 @@ const resources = {
             date: "2024-02-05",
             readTime: "6 min read",
             tags: ["flutter", "architecture", "clean architecture", "mvvm"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&q=80"
           },
           projectManagement: {
             title: "The Importance of Project Management for Developers",
@@ -164,7 +167,8 @@ const resources = {
             date: "2024-01-30",
             readTime: "5 min read",
             tags: ["project management", "jira", "productivity", "software development"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80"
           },
           productOwnerMindset: {
             title: "Beyond Code: Why Thinking Like a Product Owner Is Essential for Developers",
@@ -174,7 +178,8 @@ const resources = {
             date: "2024-01-25",
             readTime: "4 min read",
             tags: ["product management", "software development", "career growth"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80"
           },
           firebaseVsSupabase: {
             title: "Firebase vs Supabase: A Comparison for Flutter Developers",
@@ -184,7 +189,8 @@ const resources = {
             date: "2024-01-20",
             readTime: "4 min read",
             tags: ["flutter", "firebase", "supabase", "backend"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80"
           },
           notificationsMatter: {
             title: "The Importance of Push Notifications in Mobile Apps",
@@ -194,7 +200,8 @@ const resources = {
             date: "2024-01-15",
             readTime: "3 min read",
             tags: ["firebase", "mobile development", "user engagement", "push notifications"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&q=80"
           },
           flutterNetlify: {
             title: "Flutter + Netlify = Power of Speed and Easy Deployment",
@@ -204,7 +211,8 @@ const resources = {
             date: "2024-01-10",
             readTime: "3 min read",
             tags: ["flutter", "web development", "deployment", "netlify"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
           },
           flutterFirebaseSupabase: {
             title: "Flutter + Firebase + Supabase: The Ultimate Stack",
@@ -214,7 +222,8 @@ const resources = {
             date: "2024-01-05",
             readTime: "5 min read",
             tags: ["flutter", "firebase", "supabase", "full-stack"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&q=80"
           },
           promptVsContext: {
             title: "Prompt Engineering vs. Context Engineering",
@@ -224,7 +233,8 @@ const resources = {
             date: "2025-10-13",
             readTime: "4 min read",
             tags: ["Flutter", "AI", "PromptEngineering", "ContextEngineering", "SoftwareEngineering", "MobileDevelopment"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80"
           },
         }
       },
@@ -407,7 +417,8 @@ const resources = {
             date: "2024-02-15",
             readTime: "3 دقائق قراءة",
             tags: ["هندسة البرمجيات", "تطوير التطبيقات", "التحول الرقمي"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop&q=80"
           },
           digitalExperience: {
             title: "تجربة رقمية تتجاوز الأكواد",
@@ -417,7 +428,8 @@ const resources = {
             date: "2024-02-10",
             readTime: "4 دقائق قراءة",
             tags: ["تجربة المستخدم", "تطوير التطبيقات", "هندسة البرمجيات"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop&q=80"
           },
           cleanArchitectureVsMVVM: {
             title: "Clean Architecture مقابل MVVM: اختيار النهج الصحيح",
@@ -427,7 +439,8 @@ const resources = {
             date: "2024-02-05",
             readTime: "6 دقائق قراءة",
             tags: ["Flutter", "هندسة البرمجيات", "Clean Architecture", "MVVM"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&q=80"
           },
           projectManagement: {
             title: "أهمية إدارة المشاريع للمطورين",
@@ -437,7 +450,8 @@ const resources = {
             date: "2024-01-30",
             readTime: "5 دقائق قراءة",
             tags: ["إدارة المشاريع", "Jira", "الإنتاجية", "تطوير البرمجيات"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80"
           },
           productOwnerMindset: {
             title: "ما وراء الأكواد: لماذا يعد التفكير كمالك للمنتج ضرورياً للمطورين",
@@ -447,7 +461,8 @@ const resources = {
             date: "2024-01-25",
             readTime: "4 دقائق قراءة",
             tags: ["إدارة المنتج", "تطوير البرمجيات", "النمو المهني"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80"
           },
           firebaseVsSupabase: {
             title: "Firebase مقابل Supabase: مقارنة لمطوري Flutter",
@@ -457,7 +472,8 @@ const resources = {
             date: "2024-01-20",
             readTime: "4 دقائق قراءة",
             tags: ["Flutter", "Firebase", "Supabase", "الواجهة الخلفية"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80"
           },
           notificationsMatter: {
             title: "أهمية الإشعارات الفورية في التطبيقات المحمولة",
@@ -467,7 +483,8 @@ const resources = {
             date: "2024-01-15",
             readTime: "3 دقائق قراءة",
             tags: ["Firebase", "تطوير الجوال", "تفاعل المستخدم", "الإشعارات الفورية"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&q=80"
           },
           flutterNetlify: {
             title: "Flutter + Netlify = قوة السرعة والنشر السهل",
@@ -477,7 +494,8 @@ const resources = {
             date: "2024-01-10",
             readTime: "3 دقائق قراءة",
             tags: ["Flutter", "تطوير الويب", "النشر", "Netlify"],
-            featured: false
+            featured: false,
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
           },
           flutterFirebaseSupabase: {
             title: "Flutter + Firebase + Supabase: المكدس الأمثل",
@@ -487,7 +505,8 @@ const resources = {
             date: "2024-01-05",
             readTime: "5 دقائق قراءة",
             tags: ["Flutter", "Firebase", "Supabase", "تطوير كامل المكدس"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&q=80"
           },
           promptVsContext: {
             title: "هندسة التعليمات مقابل هندسة السياق",
@@ -497,7 +516,8 @@ const resources = {
             date: "2025-10-13",
             readTime: "4 دقائق قراءة",
             tags: ["Flutter", "AI", "هندسة التعليمات", "هندسة السياق", "هندسة البرمجيات", "تطوير الجوال"],
-            featured: true
+            featured: true,
+            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80"
           },
         }
       },

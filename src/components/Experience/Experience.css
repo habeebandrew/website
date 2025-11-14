@@ -42,14 +42,14 @@
 
 .timeline-item.current .timeline-dot {
   background: var(--accent-color);
-  box-shadow: 0 0 0 2px var(--accent-color), 0 0 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 0 0 2px var(--accent-color), 0 0 20px rgba(139, 92, 246, 0.3);
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 2px var(--accent-color), 0 0 20px rgba(255, 107, 107, 0.3); }
-  50% { box-shadow: 0 0 0 2px var(--accent-color), 0 0 30px rgba(255, 107, 107, 0.5); }
-  100% { box-shadow: 0 0 0 2px var(--accent-color), 0 0 20px rgba(255, 107, 107, 0.3); }
+  0% { box-shadow: 0 0 0 2px var(--accent-color), 0 0 20px rgba(139, 92, 246, 0.3); }
+  50% { box-shadow: 0 0 0 2px var(--accent-color), 0 0 30px rgba(139, 92, 246, 0.5); }
+  100% { box-shadow: 0 0 0 2px var(--accent-color), 0 0 20px rgba(139, 92, 246, 0.3); }
 }
 
 .timeline-content {
