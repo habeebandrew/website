@@ -6,23 +6,52 @@
 .resume-btn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--gradient-primary);
   border: none;
-  border-radius: 8px;
-  color: white;
+  border-radius: 50px;
+  color: var(--text-accent);
   font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.resume-btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .resume-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.resume-btn i {
+  transition: transform 0.3s ease;
+}
+
+.resume-btn:hover i {
+  transform: scale(1.2) rotate(360deg);
 }
 
 .resume-btn i {

@@ -21,39 +21,91 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
-  background: var(--bg-card);
-  border-radius: 15px;
-  transition: all 0.3s ease;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--border-color);
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 0.8s ease forwards;
+  position: relative;
+  overflow: hidden;
 }
 
 .contact-item:nth-child(1) { animation-delay: 0.1s; }
 .contact-item:nth-child(2) { animation-delay: 0.2s; }
 
+.contact-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  border-radius: 20px 20px 0 0;
+}
+
+.contact-item::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .contact-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
   border-color: var(--primary-color);
 }
 
+.contact-item:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-item:hover::after {
+  opacity: 0.1;
+}
+
 .contact-item i {
-  font-size: 24px;
+  font-size: 28px;
   color: var(--primary-color);
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+}
+
+.contact-item:hover i {
+  transform: scale(1.15) rotate(360deg);
+  background: var(--gradient-primary);
+  color: var(--text-accent);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
 }
 
 .contact-text {
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-text h3 {
