@@ -7,8 +7,8 @@ const ResumeDownload = () => {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = 'HABIB ANDRAWS - Flutter Developer & Software Engineer Resume.pdf';
-    link.download = 'HABIB ANDRAWS - Flutter Developer & Software Engineer Resume.pdf';
+    link.href = 'HABIB_ANDRAWS_Resume.pdf';
+    link.download = 'HABIB_ANDRAWS_Resume.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();

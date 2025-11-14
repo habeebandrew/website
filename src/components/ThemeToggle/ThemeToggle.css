@@ -10,7 +10,7 @@
   transition: all 0.3s ease;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-primary, #333);
+  color: var(--text-primary);
 }
 
 .theme-toggle:hover {
@@ -61,6 +61,20 @@
   min-width: 35px;
   text-align: left;
   font-size: 0.875rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+/* Ensure text is visible in dark mode */
+.dark-theme .theme-toggle,
+.dark-theme .toggle-label {
+  color: var(--text-primary);
+}
+
+/* Ensure text is visible in light mode */
+.light-theme .theme-toggle,
+.light-theme .toggle-label {
+  color: var(--text-primary);
 }
 
 /* Mobile responsive */

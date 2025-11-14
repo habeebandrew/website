@@ -35,6 +35,8 @@
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .hero-content h2 {
