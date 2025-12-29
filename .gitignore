@@ -21,6 +21,7 @@ public/*.webp
 public/*.svg
 !public/vite.svg
 !public/mypic.png
+!public/mypic.jpg
 !public/thanksfromalkamal.jpg
 
 # Image directories
