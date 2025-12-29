@@ -90,11 +90,11 @@ const Home = () => {
         <meta property="og:description" content="Professional Flutter developer and software engineer specializing in high-performance applications." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://habeeb-andraws.vercel.app/" />
-        <meta property="og:image" content="/mypic.png" />
+        <meta property="og:image" content="/mypic.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Habeeb Andraws - Flutter Developer & Software Engineer" />
         <meta name="twitter:description" content="Professional Flutter developer and software engineer specializing in high-performance applications." />
-        <meta name="twitter:image" content="/mypic.png" />
+        <meta name="twitter:image" content="/mypic.jpg" />
         <link rel="canonical" href="https://habeeb-andraws.vercel.app/" />
       </Helmet>
       
@@ -141,7 +141,7 @@ const Home = () => {
             <div className="profile-glow"></div>
             <div className="profile-border"></div>
             <div className="profile-img">
-              <img src="/mypic.png" alt="Habeeb Andraws Profile Picture" loading="lazy" />
+              <img src="/mypic.jpg" alt="Habeeb Andraws Profile Picture" loading="lazy" />
             </div>
           </div>
         </div>
