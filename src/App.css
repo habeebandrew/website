@@ -4,11 +4,13 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow-x: hidden;
 }
 
 main {
   flex: 1;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Enhanced Global animations */
