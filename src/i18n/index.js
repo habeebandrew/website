@@ -118,6 +118,7 @@ const resources = {
           supabase: "Supabase",
           projectManagement: "Project Management",
           architecture: "Architecture",
+          softwareEngineering: "Software Engineering",
           ai: "AI"
         },
         readMore: "Read More",
@@ -235,6 +236,17 @@ const resources = {
             tags: ["Flutter", "AI", "PromptEngineering", "ContextEngineering", "SoftwareEngineering", "MobileDevelopment"],
             featured: true,
             image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80"
+          },
+          vibeCodingVsEngineering: {
+            title: "Vibe Coding vs. Vibe Engineering: A Trend or a Smarter Way to Work?",
+            excerpt: "Recently, the term Vibe Coding has been everywhere. Writing code fast, following intuition, and letting the \"vibe\" guide development. But the real question is: Is this productive… or just chaos with a new name?",
+            content: "Vibe Coding vs. Vibe Engineering: A Trend or a Smarter Way to Work?\n\nRecently, the term Vibe Coding has been everywhere.\nWriting code fast, following intuition, and letting the \"vibe\" guide development.\nBut the real question is:\nIs this productive… or just chaos with a new name?\n\nFrom my experience, Vibe Coding isn't the problem.\nThe problem starts when it replaces engineering thinking.\n\nThis is where the idea of a Vibe Engineer comes in.\n\nA Vibe Engineer:\n• Understands the problem before opening the IDE\n• Balances creativity with engineering discipline\n• Cares about architecture, code quality, and maintainability\n• Knows when to stop vibing and start structuring\n\nVibe Engineer = Creativity + Engineering Discipline\n\nVibe Coding may build a quick prototype.\nVibe Engineering builds real products.",
+            category: "softwareEngineering",
+            date: "2025-01-20",
+            readTime: "3 min read",
+            tags: ["SoftwareEngineering", "VibeCoding", "AIinSoftware", "ProductEngineering", "CodeQuality"],
+            featured: true,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf9HKiT3sO-HSvaDA_0EPDBpasdonGcKzVjw&s"
           },
         }
       },
@@ -401,6 +413,7 @@ const resources = {
           supabase: "Supabase",
           projectManagement: "إدارة المشاريع",
           architecture: "هندسة البرمجيات",
+          softwareEngineering: "هندسة البرمجيات",
           ai: "ذكاء اصطناعي"
         },
         readMore: "اقرأ المزيد",
@@ -518,6 +531,17 @@ const resources = {
             tags: ["Flutter", "AI", "هندسة التعليمات", "هندسة السياق", "هندسة البرمجيات", "تطوير الجوال"],
             featured: true,
             image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80"
+          },
+          vibeCodingVsEngineering: {
+            title: "Vibe Coding مقابل Vibe Engineering: موضة أم طريقة عمل أذكى؟",
+            excerpt: "مؤخراً، أصبح مصطلح Vibe Coding في كل مكان. كتابة الكود بسرعة، اتباع الحدس، والسماح للـ \"vibe\" بتوجيه التطوير. لكن السؤال الحقيقي هو: هل هذا منتج... أم مجرد فوضى باسم جديد؟",
+            content: "Vibe Coding مقابل Vibe Engineering: موضة أم طريقة عمل أذكى؟\n\nمؤخراً، أصبح مصطلح Vibe Coding في كل مكان.\nكتابة الكود بسرعة، اتباع الحدس، والسماح للـ \"vibe\" بتوجيه التطوير.\nلكن السؤال الحقيقي هو:\nهل هذا منتج... أم مجرد فوضى باسم جديد؟\n\nمن تجربتي، Vibe Coding ليس المشكلة.\nالمشكلة تبدأ عندما يحل محل التفكير الهندسي.\n\nهنا تأتي فكرة Vibe Engineer.\n\nVibe Engineer:\n• يفهم المشكلة قبل فتح IDE\n• يوازن بين الإبداع والانضباط الهندسي\n• يهتم بالهندسة المعمارية وجودة الكود والقابلية للصيانة\n• يعرف متى يتوقف عن الـ \"vibing\" ويبدأ في البناء المنظم\n\nVibe Engineer = الإبداع + الانضباط الهندسي\n\nقد يبني Vibe Coding نموذجاً أولياً سريعاً.\nVibe Engineering يبني منتجات حقيقية.",
+            category: "softwareEngineering",
+            date: "2025-01-20",
+            readTime: "3 دقائق قراءة",
+            tags: ["هندسة البرمجيات", "VibeCoding", "الذكاء الاصطناعي في البرمجيات", "هندسة المنتج", "جودة الكود"],
+            featured: true,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf9HKiT3sO-HSvaDA_0EPDBpasdonGcKzVjw&s"
           },
         }
       },
